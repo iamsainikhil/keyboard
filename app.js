@@ -4,7 +4,7 @@ let nlkToggle = false;
 let slkToggle = false;
 
 // keys
-let keys = document.querySelectorAll('.key');
+let keys = document.querySelectorAll('kbd');
 let keyToggle = false;
 
 // toggle class on a lock key element
@@ -39,28 +39,17 @@ function toggleLock(code) {
     }
 };
 
-// toggle class on a key element
-function toggleKeyClass(element, condition) {
-    if (condition) {
-        element.classList.add('keypress');
-    } else {
-        element.classList.remove('keypress');
-    }
-};
-
 // on screen keyboard keypress event
 function toggleKey(e) {
-    keyAttribute = e.target; // string
-    keyToggle = !keyToggle;
+    keyAttribute = e.target;
     toggleLight(keyAttribute, keyToggle);
 };
 
 // lights off
-function toggleLight(code, condition) {
-    toggleKeyClass(code.parentNode, keyToggle);
+function toggleLight(code) {
     if (code.dataset.key == 123) {
-        console.log(condition);
-        if (condition) {
+        keyToggle = !keyToggle;
+        if (keyToggle) {
             document.body.classList.add('light-off');
         } else {
             document.body.classList.remove('light-off');
