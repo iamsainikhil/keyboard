@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Virtual Keyboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="keyboard">
+        <div class="row r-1">
+            <div class="group">
+                <kbd data-key="27" class="key">Esc</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="112" class="key">F1</kbd>
+                <kbd data-key="113" class="key">F2</kbd>
+                <kbd data-key="114" class="key">F3</kbd>
+                <kbd data-key="115" class="key">F4</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="116" class="key">F5</kbd>
+                <kbd data-key="117" class="key">F6</kbd>
+                <kbd data-key="118" class="key">F7</kbd>
+                <kbd data-key="119" class="key">F8</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="120" class="key">F9</kbd>
+                <kbd data-key="121" class="key">F10</kbd>
+                <kbd data-key="122" class="key">F11</kbd>
+                <kbd data-key="123" class="key">F12</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="-1" class="key">Print Screen</kbd>
+                <kbd data-key="145" class="key">Scroll Lock</kbd>
+                <kbd data-key="19" class="key">Pause Break</kbd>
+            </div>
+            <div class="group">
+                <div class="lock">
+                    <span class="light-key off" id="nlk"></span>
+                    <span>Num&nbsp;Lk</span>
+                </div>
+                <div class="lock">
+                    <span class="light-key off" id="clk"></span>
+                    <span>Caps&nbsp;Lk</span>
+                </div>
+                <div class="lock">
+                    <span class="light-key off" id="slk"></span>
+                    <span>Scroll&nbsp;Lk</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
