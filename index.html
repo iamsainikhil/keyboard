@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Virtual Keyboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="keyboard">
+        <div class="row r-1">
+            <div class="group">
+                <div class="key">
+                    <kbd data-key="27">Esc</kbd>
+                </div>
+            </div>
+            <div class="group">
+                <div class="key">
+                    <kbd data-key="112">F1</kbd>
+                    <kbd></kbd><i class="fas fa-home"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="113">F2</kbd>
+                    <kbd><i class="fas fa-envelope"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="114">F3</kbd>
+                    <kbd><i class="fas fa-search"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="115">F4</kbd>
+                    <kbd><i class="fas fa-copy"></i></kbd>
+                </div>
+            </div>
+            <div class="group">
+                <div class="key">
+                    <kbd data-key="116">F5</kbd>
+                    <kbd><i class="fas fa-play"></i><i class="fas fa-pause"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="117">F6</kbd>
+                    <kbd><i class="fas fa-stop"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="118">F7</kbd>
+                    <kbd><i class="fas fa-fast-backward"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="119">F8</kbd>
+                    <kbd><i class="fas fa-fast-forward"></i></kbd>
+                </div>
+            </div>
+            <div class="group">
+                <div class="key">
+                    <kbd data-key="120">F9</kbd>
+                    <kbd><i class="fas fa-volume-down"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="121">F10</kbd>
+                    <kbd><i class="fas fa-volume-up"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="122">F11</kbd>
+                    <kbd><i class="fas fa-volume-off"></i></kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="123">F12</kbd>
+                    <kbd><i class="fas fa-sun"></i></kbd>
+                </div>
+            </div>
+            <div class="group">
+                <div class="key">
+                    <kbd>Print Screen</kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="145">Scroll Lock</kbd>
+                </div>
+                <div class="key">
+                    <kbd data-key="19">Pause Break</kbd>
+                </div>
+            </div>
+            <div class="group">
+                <div class="lock">
+                    <span class="light-key off" id="nlk"></span>
+                    <span>Num&nbsp;Lk</span>
+                </div>
+                <div class="lock">
+                    <span class="light-key off" id="clk"></span>
+                    <span>Caps&nbsp;Lk</span>
+                </div>
+                <div class="lock">
+                    <span class="light-key off" id="slk"></span>
+                    <span>Scroll&nbsp;Lk</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
