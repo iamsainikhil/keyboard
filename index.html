@@ -12,49 +12,192 @@
 
 <body>
     <div class="keyboard">
+        <!-- 1st row -->
         <div class="row r-1">
             <div class="group">
                 <kbd data-key="27" class="key">Esc</kbd>
-            </div>
-            <div class="group">
-                <kbd data-key="112" class="key">F1<i class="fas fa-home"></i></kbd>
-                <kbd data-key="113" class="key">F2<i class="fas fa-envelope"></i></kbd>
-                <kbd data-key="114" class="key">F3<i class="fas fa-search"></i></kbd>
-                <kbd data-key="115" class="key">F4<i class="fas fa-copy"></i></kbd>
-            </div>
-            <div class="group">
-                <kbd data-key="116" class="key">F5<i class="fas fa-play"><i class="fas fa-pause"></i></i></kbd>
-                <kbd data-key="117" class="key">F6<i class="fas fa-stop"></i></kbd>
-                <kbd data-key="118" class="key">F7<i class="fas fa-fast-backward"></i></kbd>
-                <kbd data-key="119" class="key">F8<i class="fas fa-fast-forward"></i></kbd>
-            </div>
-            <div class="group">
-                <kbd data-key="120" class="key">F9<i class="fas fa-volume-down"></i></kbd>
-                <kbd data-key="121" class="key">F10<i class="fas fa-volume-up"></i></kbd>
-                <kbd data-key="122" class="key">F11<i class="fas fa-volume-off"></i></kbd>
-                <kbd data-key="123" class="key">F12<i class="fas fa-sun"></i></kbd>
-            </div>
-            <div class="group">
-                <kbd data-key="-1" class="key">Print Screen</kbd>
-                <kbd data-key="145" class="key">Scroll Lock</kbd>
-                <kbd data-key="19" class="key">Pause Break</kbd>
-            </div>
-            <div class="group">
-                <div class="lock">
-                    <span class="light-key off" id="nlk"></span>
-                    <span>Num&nbsp;Lk</span>
+                <div class="mini-group">
+                    <kbd data-key="112" class="key">F1<i class="fas fa-home"></i></kbd>
+                    <kbd data-key="113" class="key">F2<i class="fas fa-envelope"></i></kbd>
+                    <kbd data-key="114" class="key">F3<i class="fas fa-search"></i></kbd>
+                    <kbd data-key="115" class="key">F4<i class="fas fa-copy"></i></kbd>
                 </div>
-                <div class="lock">
-                    <span class="light-key off" id="clk"></span>
-                    <span>Caps&nbsp;Lk</span>
+                <div class="mini-group">
+                    <kbd data-key="116" class="key">F5<i class="fas fa-play"><i class="fas fa-pause"></i></i></kbd>
+                    <kbd data-key="117" class="key">F6<i class="fas fa-stop"></i></kbd>
+                    <kbd data-key="118" class="key">F7<i class="fas fa-fast-backward"></i></kbd>
+                    <kbd data-key="119" class="key">F8<i class="fas fa-fast-forward"></i></kbd>
                 </div>
-                <div class="lock">
-                    <span class="light-key off" id="slk"></span>
-                    <span>Scroll&nbsp;Lk</span>
+                <div class="mini-group">
+                    <kbd data-key="120" class="key">F9<i class="fas fa-volume-down"></i></kbd>
+                    <kbd data-key="121" class="key">F10<i class="fas fa-volume-up"></i></kbd>
+                    <kbd data-key="122" class="key">F11<i class="fas fa-volume-off"></i></kbd>
+                    <kbd data-key="123" class="key">F12<i class="fas fa-sun"></i></kbd>
+                </div>
+            </div>
+            <div class="group locks">
+                <p class="lock"><span class="light-key off" id="nlk">N</span></p>
+                <p class="lock"><span class="light-key off" id="clk">C</span></p>
+                <p class="lock"><span class="light-key off" id="slk">S</span></p>
+            </div>
+            <div class="right">
+                <div class="group">
+                    <kbd data-key="-1" class="key">Print Screen</kbd>
+                    <kbd data-key="145" class="key">Scroll Lock</kbd>
+                    <kbd data-key="19" class="key">Pause Break</kbd>
                 </div>
             </div>
         </div>
+
+        <!-- 2nd row -->
+        <div class="row r-2">
+            <div class="group">
+                <kbd data-key="192" class="key large">~<i>`</i></kbd>
+                <kbd data-key="49" class="key">!<span>1</span></kbd>
+                <kbd data-key="50" class="key">@<span>2</span></kbd>
+                <kbd data-key="51" class="key">#<span>3</span></kbd>
+                <kbd data-key="52" class="key">$<span>4</span></kbd>
+                <kbd data-key="53" class="key">%<span>5</span></kbd>
+                <kbd data-key="54" class="key">^<span>6</span></kbd>
+                <kbd data-key="55" class="key">&<span>7</span></kbd>
+                <kbd data-key="56" class="key">*<span>8</span></kbd>
+                <kbd data-key="57" class="key">(<span>9</span></kbd>
+                <kbd data-key="48" class="key">)<span>10</span></kbd>
+                <kbd data-key="189" class="key">-<i class="underscore">_</i></kbd>
+                <kbd data-key="187" class="key">+<span>=</span></kbd>
+                <kbd data-key="8" class="key backspace">Backspace</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="45" class="key">Insert</kbd>
+                <kbd data-key="36" class="key">Home</kbd>
+                <kbd data-key="33" class="key">Page Up</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="144" class="key">Num Lock</kbd>
+                <kbd data-key="111" class="key">/</kbd>
+                <kbd data-key="106" class="key">*</kbd>
+                <kbd data-key="109" class="key">-</kbd>
+            </div>
+        </div>
+
+        <!-- 3rd row -->
+        <div class="row r-3">
+            <div class="group">
+                <kbd data-key="9" class="key tab">Tab⭾</kbd>
+                <kbd data-key="81" class="key">Q</kbd>
+                <kbd data-key="87" class="key">W</kbd>
+                <kbd data-key="69" class="key">E</kbd>
+                <kbd data-key="82" class="key">R</kbd>
+                <kbd data-key="84" class="key">T</kbd>
+                <kbd data-key="89" class="key">Y</kbd>
+                <kbd data-key="85" class="key">U</kbd>
+                <kbd data-key="73" class="key">I</kbd>
+                <kbd data-key="79" class="key">O</kbd>
+                <kbd data-key="80" class="key">P</kbd>
+                <kbd data-key="219" class="key">{<span>[</span></kbd>
+                <kbd data-key="221" class="key">}<span>]</span></kbd>
+                <kbd data-key="220" class="key">|<span>\</span></kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="46" class="key">Delete</kbd>
+                <kbd data-key="35" class="key">End</kbd>
+                <kbd data-key="34" class="key">Page Down</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="144" class="key">7<span>Home</span></kbd>
+                <kbd data-key="111" class="key num-special">8<i class="fas fa-long-arrow-alt-up"></i></kbd>
+                <kbd data-key="106" class="key">9<span>PgUp</span></kbd>
+                <kbd data-key="107" class="key num-large">+</kbd>
+            </div>
+        </div>
+
+        <!-- 4th row -->
+        <div class="row r-4">
+            <div class="group">
+                <kbd data-key="20" class="key tab">CapsLock</kbd>
+                <kbd data-key="65" class="key">A</kbd>
+                <kbd data-key="83" class="key">S</kbd>
+                <kbd data-key="68" class="key">D</kbd>
+                <kbd data-key="70" class="key">F</kbd>
+                <kbd data-key="71" class="key">G</kbd>
+                <kbd data-key="72" class="key">H</kbd>
+                <kbd data-key="74" class="key">J</kbd>
+                <kbd data-key="75" class="key">K</kbd>
+                <kbd data-key="76" class="key">L</kbd>
+                <kbd data-key="186" class="key">:<span>;</span></kbd>
+                <kbd data-key="222" class="key">"<span>'</span></kbd>
+                <kbd data-key="13" class="key enter">Enter ↩</kbd>
+            </div>
+            <div class="empty-group"></div>
+            <div class="group">
+                <kbd data-key="37" class="key">4<i class="fas fa-long-arrow-alt-left"></i></kbd>
+                <kbd data-key="12" class="key num-special">5<i>_</i></kbd>
+                <kbd data-key="39" class="key">6<i class="fas fa-long-arrow-alt-right"></i></kbd>
+                <p class="key key-empty"></p>
+            </div>
+        </div>
+
+        <!-- 5th row -->
+        <div class="row r-5">
+            <div class="group">
+                <kbd data-key="16" class="key shift l-s"><span>⇧</span>&nbsp;Shift</kbd>
+                <kbd data-key="90" class="key">Z</kbd>
+                <kbd data-key="88" class="key">X</kbd>
+                <kbd data-key="67" class="key">C</kbd>
+                <kbd data-key="86" class="key">V</kbd>
+                <kbd data-key="66" class="key">B</kbd>
+                <kbd data-key="78" class="key">N</kbd>
+                <kbd data-key="77" class="key">M</kbd>
+                <kbd data-key="188" class="key">&lt;<span>,</span></kbd>
+                <kbd data-key="190" class="key">&gt;<span>.</span></kbd>
+                <kbd data-key="191" class="key">?<span>/</span></kbd>
+                <kbd data-key="16" class="key shift r-s"><span>⇧</span>&nbsp;Shift</kbd>
+            </div>
+            <div class="group">
+                <p class="key key-empty"></p>
+                <kbd data-key="38" class="key"><i class="fas fa-arrow-up"></i></kbd>
+                <p class="key key-empty"></p>
+            </div>
+            <div class="group">
+                <kbd data-key="35" class="key">1<span>End</span></kbd>
+                <kbd data-key="40" class="key">2<i class="fas fa-long-arrow-alt-down"></i></kbd>
+                <kbd data-key="34" class="key">3<span>PdDn</span></kbd>
+                <kbd data-key="13" class="key num-large">Enter</kbd>
+            </div>
+        </div>
+
+        <!-- 6th row -->
+        <div class="row r-6">
+            <div class="group">
+                <kbd data-key="17" class="key">Ctrl</kbd>
+                <kbd data-key="91" class="key"><i class="fab fa-windows"></i></kbd>
+                <kbd data-key="18" class="key">Alt</kbd>
+                <kbd data-key="18" class="key spacebar">TechGeek</kbd>
+                <kbd data-key="18" class="key">Alt</kbd>
+                <kbd data-key="-2" class="key">Fn</kbd>
+                <kbd data-key="93" class="key c-menu"><i class="fas fa-bars"></i></kbd>
+                <kbd data-key="17" class="key">Ctrl</kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="37" class="key"><i class="fas fa-arrow-left"></i></kbd>
+                <kbd data-key="40" class="key"><i class="fas fa-arrow-down"></i></kbd>
+                <kbd data-key="39" class="key"><i class="fas fa-arrow-right"></i></kbd>
+            </div>
+            <div class="group">
+                <kbd data-key="45" class="key num-ins">0<span>Ins</span></kbd>
+                <kbd data-key="46" class="key">.<span>Del</span></kbd>
+                <p class="key key-empty"></p>
+            </div>
+        </div>
+
     </div>
+
+    <!-- audio -->
+    <audio id="keyAudio">
+        <source src="http://www.freesfx.co.uk/rx2/mp3s/5/16952_1461335341.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script src="app.js"></script>
 </body>
 

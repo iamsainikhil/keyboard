@@ -7,6 +7,9 @@ let slkToggle = false;
 let keys = document.querySelectorAll('kbd');
 let keyToggle = false;
 
+// audio 
+let keyAudio = document.getElementById('keyAudio');
+
 // toggle class on a lock key element
 function toggleLockClass(element, condition) {
     if (condition) {
@@ -47,13 +50,17 @@ function toggleKey(code) {
             slkToggle = !slkToggle;
             toggleLockClass(el, slkToggle);
             break;
+        default:
+            keyAudio.currentTime = 0;
+            keyAudio.play();
+            break;
     }
 };
 
 // on screen keyboard keypress event
 function keyPress(e) {
     keyAttribute = e.target.dataset.key;
-    if (e.target.localName === 'i') {
+    if (e.target.localName === 'i' || e.target.localName === 'span') {
         // get data-key of kbd which is a parent of <i>
         keyAttribute = e.target.parentNode.dataset.key;
     }
