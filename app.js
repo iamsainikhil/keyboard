@@ -1,3 +1,6 @@
+// color themes
+var bodyStyles = document.body.style;
+
 // lock keys toggle condition
 let clkToggle = false;
 let nlkToggle = false;
@@ -9,6 +12,9 @@ let keyToggle = false;
 
 // audio 
 let keyAudio = document.getElementById('keyAudio');
+
+// theme buttons
+let buttons = document.querySelectorAll('button');
 
 // toggle class on a lock key element
 function toggleLockClass(element, condition) {
@@ -32,12 +38,13 @@ function toggleKey(code) {
             toggleLockClass(el, clkToggle);
             break;
         case '123':
-            console.log(keyToggle);
             keyToggle = !keyToggle;
             if (keyToggle) {
                 document.body.classList.add('light-off');
+                buttons.forEach(button => button.style.color = '#fff');
             } else {
                 document.body.classList.remove('light-off');
+                buttons.forEach(button => button.style.color = '#333');
             }
             break;
         case '144':
@@ -67,13 +74,52 @@ function keyPress(e) {
     toggleKey(keyAttribute);
 };
 
-// // global window keydown event from real keyboard
-// window.addEventListener('keydown', function(e) {
-//     console.log(e.keyCode);
-//     if (e.keyCode === 20 || e.keyCode === 144 || e.keyCode === 145) {
-//         toggleKey(e.keyCode);
-//     }
-// });
-
 // virtual keyboard key event
 keys.forEach(key => key.addEventListener('click', keyPress));
+
+// color themes button events
+let defaultElement = document.getElementById('t-0');
+let themeOneElement = document.getElementById('t-1');
+let themeTwoElement = document.getElementById('t-2');
+let themeThreeElement = document.getElementById('t-3');
+let themeFourElement = document.getElementById('t-4');
+
+let customeElement = document.getElementById('c-t');
+let customToggle = false;
+
+
+function applyTheme(c1, c2, c3, c4) {
+    bodyStyles.setProperty('--keyboard-bg-color', c1);
+    bodyStyles.setProperty('--key-bg-color', c2);
+    bodyStyles.setProperty('--key-color', c3);
+    bodyStyles.setProperty('--lock-on-color', c4);
+}
+
+
+defaultElement.addEventListener('click', function() {
+    applyTheme('#D5BCA2', '#353535', '#f5f5f5', '#A46F5E')
+});
+themeOneElement.addEventListener('click', function() {
+    applyTheme('#ddd', '#eee', '#808080', '#333')
+});
+themeTwoElement.addEventListener('click', function() {
+    applyTheme('#333', '#fff', '#000', '#008996')
+});
+themeThreeElement.addEventListener('click', function() {
+    applyTheme('#00c3b3', '#353535', '#f8f8f8', '#00AE94')
+});
+
+// custom theme
+themeFourElement.addEventListener('click', function() {
+    customToggle = !customToggle;
+    if (customToggle) {
+        customeElement.style.display = 'block';
+    } else {
+        customeElement.style.display = 'none';
+    }
+});
+
+// global window keydown event from real keyboard
+window.addEventListener('keydown', function(e) {
+    toggleKey(e.keyCode.toString());
+});

@@ -8,6 +8,8 @@
     <title>Virtual Keyboard</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="colorpicker.min.css">
 </head>
 
 <body>
@@ -198,7 +200,89 @@
         Your browser does not support the audio element.
     </audio>
 
+    <div class="color-themes">
+        <h2 class="title">Keyboard Theme</h2>
+        <p class="sub-title">Select any default theme below or generate a custom theme to switch colors</p>
+        <div class="button-wrapper">
+            <button class="button" id="t-0">Default</button>
+            <button class="button" id="t-1">Light</button>
+            <button class="button" id="t-2">Dark</button>
+            <button class="button" id="t-3">Blue</button>
+            <button class="button" id="t-4">Custom</button>
+        </div>
+        <div class="custom-theme" id="c-t">
+            <h3 class="title">Set below 4 properties to develop your custom theme</h3>
+            <div class="cp-wrapper">
+                <button class="button" id="kbc">Keyboard Background Color</button>
+                <button class="button" id="keybc">Key Background Color</button>
+                <button class="button" id="kc">Key Color</button>
+                <button class="button" id="lkc">Lock Key Color</button>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
+    <script src="colorpicker.min.js"></script>
+    <script>
+        var bodyStyles = document.body.style;
+        let kbc = document.getElementById('kbc');
+        let keybc = document.getElementById('keybc');
+        let kc = document.getElementById('kc');
+        let lkc = document.getElementById('lkc');
+        const colorOptions = {
+            preview: true,
+            opacity: true,
+            hue: true,
+            interaction: {
+                hex: true,
+                rgba: true,
+                hsva: true,
+                input: true,
+                clear: true,
+                save: true
+            }
+        };
+        // color picker
+        const kbcPickr = Pickr.create({
+            el: '#kbc',
+            useAsButton: true,
+            components: colorOptions,
+            onSave(hsva, instance) {
+                let color = hsva.toRGBA().toString();
+                bodyStyles.setProperty('--keyboard-bg-color', color);
+            }
+        });
+
+        const keybcPickr = Pickr.create({
+            el: '#keybc',
+            useAsButton: true,
+            components: colorOptions,
+            onSave(hsva, instance) {
+                let color = hsva.toRGBA().toString();
+                bodyStyles.setProperty('--key-bg-color', color);
+            }
+        });
+
+        const kcPickr = Pickr.create({
+            el: '#kc',
+            useAsButton: true,
+            components: colorOptions,
+            onSave(hsva, instance) {
+                let color = hsva.toRGBA().toString();
+                bodyStyles.setProperty('--key-color', color);
+            }
+        });
+
+        const lkcPickr = Pickr.create({
+            el: '#lkc',
+            useAsButton: true,
+            components: colorOptions,
+            onSave(hsva, instance) {
+                let color = hsva.toRGBA().toString();
+                bodyStyles.setProperty('--lock-on-color', color);
+            }
+        });
+    </script>
 </body>
 
 </html>

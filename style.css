@@ -1,10 +1,31 @@
+/* colors */
+
+:root {
+    --keyboard-bg-color: #D5BCA2;
+    --key-bg-color: #353535;
+    --key-color: #f5f5f5;
+    --lock-on-color: #A46F5E;
+    --font: 'Varela Round', sans-serif;
+}
+
 body {
     overflow: auto;
-    background-color: #dcdcdc;
+    background-color: #E4E4E4;
+}
+
+::selection {
+    background-color: #4EE8AD;
+    color: #17261D;
+}
+
+::-moz-selection {
+    background-color: #4EE8AD;
+    color: #17261D;
 }
 
 * {
     box-sizing: border-box;
+    outline: none;
 }
 
 .light-off {
@@ -15,8 +36,10 @@ body {
 /* key */
 
 .key {
-    background-color: #353535;
-    color: #fff;
+    background-color: var(--key-bg-color);
+    color: var(--key-color);
+    font-family: var(--font);
+    font-size: 12px;
     width: 46px;
     height: 40px;
     display: flex;
@@ -82,6 +105,7 @@ i.underscore {
 
 .spacebar {
     width: 405px;
+    font-size: 18px;
 }
 
 .shift {
@@ -98,7 +122,7 @@ i.underscore {
 }
 
 .c-menu i {
-    border: 1px solid #fff;
+    border: 1px solid #f5f5f5;
     padding: 3px;
 }
 
@@ -127,7 +151,7 @@ i.underscore {
     width: 200px;
     margin-top: 5px;
     margin-right: 10px;
-    background-color: #353535;
+    background-color: var(--key-bg-color);
     border-radius: 5px;
 }
 
@@ -142,22 +166,22 @@ i.underscore {
 }
 
 .off {
-    color: #f8f8f8;
-    border: 1px solid #f8f8f8;
+    color: var(--key-color);
+    border: 1px solid var(--key-color);
 }
 
 .on {
-    color: #A46F5E;
-    border: 1px solid #A46F5E;
+    color: var(--lock-on-color);
+    border: 1px solid var(--lock-on-color);
 }
 
 
 /* keyboard layout */
 
 .keyboard {
-    background-color: #D5BCA2;
+    background-color: var(--keyboard-bg-color);
     width: 1250px;
-    margin: 50px auto;
+    margin: 75px auto;
     padding: 20px 10px;
     border-radius: 15px;
     box-shadow: 0 27px 24px 0 rgba(0, 0, 0, .2), 0 40px 77px 0 rgba(0, 0, 0, .22);
@@ -195,5 +219,53 @@ i.underscore {
 
 /* color themes */
 
+.color-themes {
+    text-align: center;
+    font-family: var(--font);
+}
 
-/* body, keyboard, key, lightkey */
+.button-wrapper .button {
+    width: 150px;
+}
+
+.button {
+    height: 45px;
+    background-color: transparent;
+    border: 1px solid #5B5B5B;
+    border-radius: 25px;
+    color: #333;
+    margin: 5px 15px;
+    font-family: var(--font);
+    font-size: 16px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background-color: #00AE94;
+    border-color: #00AE94;
+    color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+}
+
+
+/* custom theme */
+
+.custom-theme {
+    padding-top: 50px;
+    display: none;
+}
+
+.cp-wrapper {
+    display: flex;
+    flex-direction: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cp-wrapper .button {
+    margin: 20px 15px;
+    padding: 5px 25px;
+}
