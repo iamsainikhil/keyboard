@@ -95,28 +95,40 @@ function applyTheme(c1, c2, c3, c4) {
     bodyStyles.setProperty('--lock-on-color', c4);
 }
 
-
-defaultElement.addEventListener('click', function() {
-    applyTheme('#D5BCA2', '#353535', '#f5f5f5', '#A46F5E')
-});
-themeOneElement.addEventListener('click', function() {
-    applyTheme('#ddd', '#eee', '#808080', '#333')
-});
-themeTwoElement.addEventListener('click', function() {
-    applyTheme('#333', '#fff', '#000', '#008996')
-});
-themeThreeElement.addEventListener('click', function() {
-    applyTheme('#00c3b3', '#353535', '#f8f8f8', '#00AE94')
-});
-
-// custom theme
-themeFourElement.addEventListener('click', function() {
+function toggleCustomThemeContent() {
     customToggle = !customToggle;
     if (customToggle) {
         customeElement.style.display = 'block';
     } else {
         customeElement.style.display = 'none';
     }
+}
+
+function hideCustomTheme() {
+    customToggle = true;
+    toggleCustomThemeContent();
+}
+
+defaultElement.addEventListener('click', function() {
+    applyTheme('#D5BCA2', '#353535', '#f5f5f5', '#A46F5E');
+    hideCustomTheme();
+});
+themeOneElement.addEventListener('click', function() {
+    applyTheme('#ddd', '#eee', '#808080', '#333');
+    hideCustomTheme();
+});
+themeTwoElement.addEventListener('click', function() {
+    applyTheme('#333', '#fff', '#000', '#008996');
+    hideCustomTheme();
+});
+themeThreeElement.addEventListener('click', function() {
+    applyTheme('#00c3b3', '#353535', '#f8f8f8', '#00AE94');
+    hideCustomTheme();
+});
+
+// custom theme
+themeFourElement.addEventListener('click', function() {
+    toggleCustomThemeContent();
 });
 
 // global window keydown event from real keyboard
