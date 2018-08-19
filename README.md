@@ -1,5 +1,21 @@
-# keyboard
-A virtual keyboard companion for all your needs.
+# About
+A virtual keyboard with cool effects and key functionalities.
 
-## Keyboard for both *Windows* and *Macintosh*
+## Keyboard for *Windows*
 Developed with **HTML**, **CSS**, and **JS** without any dependencies.
+
+## To-do list
+- *Themes*
+- *Keyboard for Macintosh*
+- *custom music for any key*
+- *custom key functions*
+- *Mobile responsive*
+
+## *Want to see my other fun project*
+### *Reaction Tester Game* 
+> [Play](https://iamsainikhil.github.io/reaction-tester)
+#### *Check out the Source Code*
+> [View](https://github.com/iamsainikhil/reaction-tester)
+
+## *If you want to get updated of my projects*
+> [Follow Me](https://github.com/iamsainikhil)

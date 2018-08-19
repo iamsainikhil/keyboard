@@ -59,7 +59,7 @@ function toggleKey(code) {
 
 // on screen keyboard keypress event
 function keyPress(e) {
-    keyAttribute = e.target.dataset.key;
+    let keyAttribute = e.target.dataset.key;
     if (e.target.localName === 'i' || e.target.localName === 'span') {
         // get data-key of kbd which is a parent of <i>
         keyAttribute = e.target.parentNode.dataset.key;
