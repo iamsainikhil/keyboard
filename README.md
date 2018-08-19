@@ -5,11 +5,10 @@ A virtual keyboard with cool effects and key functionalities.
 Developed with **HTML**, **CSS**, and **JS** without any dependencies.
 
 ## To-do list
-- *Themes*
 - *Keyboard for Macintosh*
 - *Custom music for any key*
 - *Custom key functions*
-- *Mobile responsive*
+- *Mobile Keyboard*
 
 ## *Want to see my other fun project*
 ### *Reaction Tester Game* 
