@@ -1,6 +1,6 @@
 body {
-    padding: 0;
-    margin: 0;
+    overflow: auto;
+    background-color: #dcdcdc;
 }
 
 * {
@@ -11,79 +11,189 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.keyboard {
-    text-align: center;
-    background-color: #dcdcdc;
-    height: 60vh;
-    margin: 50px 25px;
-    padding: 20px;
-    border-radius: 15px;
-}
+
+/* key */
 
 .key {
-    background-color: #808080;
+    background-color: #353535;
     color: #fff;
-    width: 45px;
+    width: 46px;
     height: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 12px;
+    align-items: center;
+    text-align: center;
     margin: 0 4px;
+    padding: 0 2px;
     border-radius: 10px;
     box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .key:hover {
     cursor: pointer;
-    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
     transform: translateY(3px);
-    -webkit-transform: translateY(3px);
+    -webkit-transform: translateY(2px);
     transition: all 0.1s ease-in-out;
     -webkit-transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
     -o-transition: all 0.1s ease-in-out;
 }
 
+.key-empty {
+    background-color: transparent;
+    box-shadow: none;
+}
+
 .key i {
+    margin-top: 1px;
+}
+
+.key .fas {
     font-size: 11px;
 }
 
-
-/* row & groups*/
-
-.row,
-.group {
-    display: flex;
-    flex-direction: row nowrap;
+.key.large {
+    padding-top: 5px;
+    font-size: 18px;
 }
 
-.group {
-    margin-right: 25px;
+.key.large i {
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+i.underscore {
+    margin-top: -8px;
 }
 
 
-/* caps lock & num lock */
+/* special keys */
 
-.lock {
+.backspace,
+.tab {
+    width: 80px;
+}
+
+.enter {
+    width: 100px;
+}
+
+.spacebar {
+    width: 405px;
+}
+
+.shift {
     display: flex;
-    flex-direction: column;
+    flex-flow: row nowrap;
+}
+
+.l-s {
+    width: 95px;
+}
+
+.r-s {
+    width: 140px;
+}
+
+.c-menu i {
+    border: 1px solid #fff;
+    padding: 3px;
+}
+
+.num-special {
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+
+.num-ins {
+    width: 100px;
+}
+
+.num-large {
+    margin-bottom: -58px;
+    height: 100px;
+}
+
+
+/* caps lock, num lock, and scroll lock indicators */
+
+.locks {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 0 10px;
+    width: 200px;
+    margin-top: 5px;
+    margin-right: 10px;
+    background-color: #353535;
+    border-radius: 5px;
+}
+
+.lock {
+    margin: 5px 20px;
+    width: 135px;
 }
 
 .light-key {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-bottom: 3px;
+    padding: 3px 5px;
+    border-radius: 5px;
 }
 
 .off {
-    background-color: #f8f8f8;
+    color: #f8f8f8;
+    border: 1px solid #f8f8f8;
 }
 
 .on {
-    background-color: rgba(0, 0, 0, 0.5);
+    color: #A46F5E;
+    border: 1px solid #A46F5E;
 }
+
+
+/* keyboard layout */
+
+.keyboard {
+    background-color: #D5BCA2;
+    width: 1250px;
+    margin: 50px auto;
+    padding: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0 27px 24px 0 rgba(0, 0, 0, .2), 0 40px 77px 0 rgba(0, 0, 0, .22);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: auto 0.2fr 0.2fr;
+    grid-gap: 25px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.group,
+.mini-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mini-group {
+    margin-left: 28px;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* color themes */
+
+
+/* body, keyboard, key, lightkey */
