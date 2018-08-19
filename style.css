@@ -260,7 +260,7 @@ i.underscore {
 
 .cp-wrapper {
     display: flex;
-    flex-direction: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
