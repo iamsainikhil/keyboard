@@ -7,8 +7,8 @@ Developed with **HTML**, **CSS**, and **JS** without any dependencies.
 ## To-do list
 - *Themes*
 - *Keyboard for Macintosh*
-- *custom music for any key*
-- *custom key functions*
+- *Custom music for any key*
+- *Custom key functions*
 - *Mobile responsive*
 
 ## *Want to see my other fun project*
