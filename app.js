@@ -1,12 +1,9 @@
 // color themes
 var bodyStyles = document.body.style;
 
-// F12 key light toggle
-let lightToggle = false;
-
 // keys
+let keyboardElement = document.getElementsByClassName('keyboard');
 let keys = document.querySelectorAll('kbd');
-let keyToggle = false;
 
 // audio 
 let keyAudio = document.getElementById('keyAudio');
@@ -29,14 +26,7 @@ function toggleKey(code) {
             toggleLockClass(el);
             break;
         case '123':
-            lightToggle = !lightToggle;
-            if (lightToggle) {
-                document.body.classList.add('light-off');
-                buttons.forEach(button => button.style.color = '#fff');
-            } else {
-                document.body.classList.remove('light-off');
-                buttons.forEach(button => button.style.color = '#333');
-            }
+            keyboardElement[0].classList.toggle('light-off');
             break;
         case '144':
             el = document.getElementById('nlk');
@@ -99,19 +89,19 @@ function hideCustomTheme() {
 }
 
 defaultElement.addEventListener('click', function() {
-    applyTheme('#D5BCA2', '#353535', '#f5f5f5', '#A46F5E');
+    applyTheme('#00c3b3', '#353535', '#f8f8f8', '#00AE94');
     hideCustomTheme();
 });
 themeOneElement.addEventListener('click', function() {
-    applyTheme('#ddd', '#eee', '#808080', '#333');
+    applyTheme('#bbb', '#eee', '#808080', '#333');
     hideCustomTheme();
 });
 themeTwoElement.addEventListener('click', function() {
-    applyTheme('#333', '#fff', '#000', '#008996');
+    applyTheme('rgba(0, 0, 0, 0.8)', '#353535', '#f8f8f8', '#008996');
     hideCustomTheme();
 });
 themeThreeElement.addEventListener('click', function() {
-    applyTheme('#00c3b3', '#353535', '#f8f8f8', '#00AE94');
+    applyTheme('#D5BCA2', '#353535', '#f5f5f5', '#A46F5E');
     hideCustomTheme();
 });
 
