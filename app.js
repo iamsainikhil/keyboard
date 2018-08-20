@@ -1,10 +1,8 @@
 // color themes
 var bodyStyles = document.body.style;
 
-// lock keys toggle condition
-let clkToggle = false;
-let nlkToggle = false;
-let slkToggle = false;
+// F12 key light toggle
+let lightToggle = false;
 
 // keys
 let keys = document.querySelectorAll('kbd');
@@ -17,14 +15,8 @@ let keyAudio = document.getElementById('keyAudio');
 let buttons = document.querySelectorAll('button');
 
 // toggle class on a lock key element
-function toggleLockClass(element, condition) {
-    if (condition) {
-        element.classList.add('on');
-        element.classList.remove('off');
-    } else {
-        element.classList.add('off');
-        element.classList.remove('on');
-    }
+function toggleLockClass(element) {
+    element.classList.toggle('on');
 };
 
 // toggle function for caps, num, and scroll lock keys
@@ -34,12 +26,11 @@ function toggleKey(code) {
     switch (code) {
         case '20':
             el = document.getElementById('clk');
-            clkToggle = !clkToggle;
-            toggleLockClass(el, clkToggle);
+            toggleLockClass(el);
             break;
         case '123':
-            keyToggle = !keyToggle;
-            if (keyToggle) {
+            lightToggle = !lightToggle;
+            if (lightToggle) {
                 document.body.classList.add('light-off');
                 buttons.forEach(button => button.style.color = '#fff');
             } else {
@@ -49,13 +40,11 @@ function toggleKey(code) {
             break;
         case '144':
             el = document.getElementById('nlk');
-            nlkToggle = !nlkToggle;
-            toggleLockClass(el, nlkToggle);
+            toggleLockClass(el);
             break;
         case '145':
             el = document.getElementById('slk');
-            slkToggle = !slkToggle;
-            toggleLockClass(el, slkToggle);
+            toggleLockClass(el);
             break;
         default:
             keyAudio.currentTime = 0;
@@ -131,7 +120,20 @@ themeFourElement.addEventListener('click', function() {
     toggleCustomThemeContent();
 });
 
+// toggle key-press class on keys when real keyboard key is clicked
+function toggleKeyPress(el) {
+    if (el.classList.contains('key-press')) {
+        el.classList.remove('key-press');
+    } else {
+        keys.forEach(key => key.classList.remove('key-press'));
+        el.classList.add('key-press');
+    }
+}
+
 // global window keydown event from real keyboard
 window.addEventListener('keydown', function(e) {
-    toggleKey(e.keyCode.toString());
+    let code = e.keyCode.toString();
+    let keyElement = document.querySelector(`kbd[data-key="${code}"]`);
+    toggleKey(code);
+    toggleKeyPress(keyElement);
 });
