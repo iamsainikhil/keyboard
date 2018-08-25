@@ -1,11 +1,22 @@
-/* colors */
+/* colors &fonts*/
+
+@font-face {
+    font-family: 'vr-b';
+    src: url('assets/fonts/VisbyRoundCF-Bold.woff');
+}
+
+@font-face {
+    font-family: 'vr-m';
+    src: url('assets/fonts/VisbyRoundCF-Medium.woff');
+}
 
 :root {
     --keyboard-bg-color: #00c3b3;
     --key-bg-color: #353535;
     --key-color: #FDF6FF;
     --lock-on-color: #00AE94;
-    --font: 'Varela Round', sans-serif;
+    --font-b: 'vr-b', sans-serif;
+    --font-m: 'vr-m', sans-serif;
 }
 
 
@@ -73,7 +84,7 @@ body {
 .key {
     background-color: var(--key-bg-color);
     color: var(--key-color);
-    font-family: var(--font);
+    font-family: var(--font-m);
     font-size: 12px;
     width: 46px;
     height: 40px;
@@ -258,7 +269,7 @@ i.underscore {
 
 .color-themes {
     text-align: center;
-    font-family: var(--font);
+    font-family: var(--font-m);
 }
 
 .button-wrapper .button {
@@ -272,7 +283,7 @@ i.underscore {
     border-radius: 25px;
     color: #333;
     margin: 5px 15px;
-    font-family: var(--font);
+    font-family: var(--font-b);
     font-size: 16px;
 }
 
@@ -306,6 +317,57 @@ i.underscore {
     padding: 5px 25px;
 }
 
+.title {
+    font-family: var(--font-b);
+    text-align: center;
+}
+
+.sub-title {
+    font-family: var(--font-m);
+    letter-spacing: 1px;
+}
+
+
+/* notes */
+
+.notes-wrapper {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.notes-wrapper .title {
+    line-height: 0;
+}
+
+.notes-wrapper b {
+    font-family: var(--font-b);
+}
+
+.notes-wrapper .button {
+    padding: 5px 25px;
+    width: 150px;
+}
+
+.notes {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: var(--font-m);
+    letter-spacing: 1px;
+    display: none;
+}
+
+.notes p {
+    background-color: #eeeeee;
+    border-radius: 20px;
+    padding: 20px 40px;
+    line-height: 1.5;
+    margin: 20px 0;
+}
+
+.show-notes {
+    display: block;
+}
+
 
 /* footer */
 
@@ -318,7 +380,7 @@ i.underscore {
     animation: gradientFill 8s ease infinite;
     margin-top: 50px;
     padding: 1px;
-    font-family: var(--font);
+    font-family: var(--font-b);
 }
 
 .footer a {

@@ -11,6 +11,10 @@ let keyAudio = document.getElementById('keyAudio');
 // theme buttons
 let buttons = document.querySelectorAll('button');
 
+// learn more
+let info = document.getElementById('info');
+let notes = document.getElementsByClassName('notes')[0];
+
 // toggle class on a lock key element
 function toggleLockClass(element) {
     element.classList.toggle('on');
@@ -126,4 +130,9 @@ window.addEventListener('keydown', function(e) {
     let keyElement = document.querySelector(`kbd[data-key="${code}"]`);
     toggleKey(code);
     toggleKeyPress(keyElement);
+});
+
+// info button
+info.addEventListener('click', function() {
+    notes.classList.toggle('show-notes');
 });
