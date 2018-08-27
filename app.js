@@ -135,4 +135,5 @@ window.addEventListener('keydown', function(e) {
 // info button
 info.addEventListener('click', function() {
     notes.classList.toggle('show-notes');
+    gtag('send', 'event', 'Information', 'Learn More', 'Info Button', 5);
 });

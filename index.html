@@ -23,6 +23,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="colorpicker.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85329633-6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-85329633-6');
+    </script>
+
 </head>
 
 <body>
@@ -250,7 +263,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy;2018 <a href="https://iamsainikhil.github.io" target="blank">Sai&nbsp;Nikhil&nbsp;Bheemanathini</a></p>
+        <p>&copy;2018 <a href="https://iamsainikhil.github.io" target="blank" onclick="trackEvent('footer', 'view-portfolio', 'click-on-footer-name', 3)">Sai&nbsp;Nikhil&nbsp;Bheemanathini</a></p>
     </footer>
 
     <script src="app.js"></script>
@@ -314,6 +327,10 @@
                 bodyStyles.setProperty('--lock-on-color', color);
             }
         });
+        // send GA events
+        function trackEvent(category, action, label, value = 0) {
+            gtag('send', 'event', category, action, label, value);
+        }
     </script>
 </body>
 
