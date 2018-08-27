@@ -163,3 +163,18 @@ let footerName = document.getElementById('footer-name');
 footerName.addEventListener('click', function() {
     trackEvent('Click-on-footer-name', 'View Portfolio', 'footer-name-link', 1);
 });
+
+// IE browser detection
+function GetIEVersion() {
+    if (navigator.userAgent.indexOf('MSIE') !== -1 ||
+        navigator.appVersion.indexOf('Trident/') > 0) {
+        /* Microsoft Internet Explorer detected in. */
+        return true
+    }
+}
+
+// On IE browser, adjust map-points by margin-left property to correctly align pins and markers on the map
+if (GetIEVersion() === true) {
+    alert("Virtual Keyboard is not supported on this browser. Please use Edge or Chrome or Firefox to view this website");
+    window.location.href = 'https://browsehappy.com/';
+}
