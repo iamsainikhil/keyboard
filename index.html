@@ -263,7 +263,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy;2018 <a href="https://iamsainikhil.github.io" target="blank" onclick="trackEvent('footer', 'view-portfolio', 'click-on-footer-name', 3)">Sai&nbsp;Nikhil&nbsp;Bheemanathini</a></p>
+        <p>&copy;2018 <a href="https://iamsainikhil.github.io" target="_blank" id="footer-name">Sai&nbsp;Nikhil&nbsp;Bheemanathini</a></p>
     </footer>
 
     <script src="app.js"></script>
@@ -295,6 +295,7 @@
             onSave(hsva, instance) {
                 let color = hsva.toRGBA().toString();
                 bodyStyles.setProperty('--keyboard-bg-color', color);
+                trackEvent(`Applied Custom Color - ${color}`, 'Keyboard Background Color', `${color}-picker`, 4);
             }
         });
 
@@ -305,6 +306,7 @@
             onSave(hsva, instance) {
                 let color = hsva.toRGBA().toString();
                 bodyStyles.setProperty('--key-bg-color', color);
+                trackEvent(`Applied Custom Color - ${color}`, 'Key Background Color', `${color}-picker`, 4);
             }
         });
 
@@ -315,6 +317,7 @@
             onSave(hsva, instance) {
                 let color = hsva.toRGBA().toString();
                 bodyStyles.setProperty('--key-color', color);
+                trackEvent(`Applied Custom Color - ${color}`, 'Key Color', `${color}-picker`, 4);
             }
         });
 
@@ -325,12 +328,9 @@
             onSave(hsva, instance) {
                 let color = hsva.toRGBA().toString();
                 bodyStyles.setProperty('--lock-on-color', color);
+                trackEvent(`Applied Custom Color - ${color}`, 'Lock Key Color', `${color}-picker`, 4);
             }
         });
-        // send GA events
-        function trackEvent(category, action, label, value = 0) {
-            gtag('send', 'event', category, action, label, value);
-        }
     </script>
 </body>
 

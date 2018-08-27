@@ -15,9 +15,19 @@ let buttons = document.querySelectorAll('button');
 let info = document.getElementById('info');
 let notes = document.getElementsByClassName('notes')[0];
 
+// send GA events
+function trackEvent(action, category, label, value = 0) {
+    gtag('event', action, {
+        'event_category': category,
+        'event_label': label,
+        'value': value
+    });
+}
+
 // toggle class on a lock key element
-function toggleLockClass(element) {
+function toggleLockClass(element, name) {
     element.classList.toggle('on');
+    trackEvent(`Active/Deactivate ${name} key`, 'Lock keys', `${name}-key-click`, 5);
 };
 
 // toggle function for caps, num, and scroll lock keys
@@ -27,18 +37,19 @@ function toggleKey(code) {
     switch (code) {
         case '20':
             el = document.getElementById('clk');
-            toggleLockClass(el);
+            toggleLockClass(el, 'caps-lock');
             break;
         case '123':
             keyboardElement[0].classList.toggle('light-off');
+            trackEvent(`Active/Deactivate F12 key`, 'Toggle Light Key', 'F12-key-click', 4);
             break;
         case '144':
             el = document.getElementById('nlk');
-            toggleLockClass(el);
+            toggleLockClass(el, 'num-lock');
             break;
         case '145':
             el = document.getElementById('slk');
-            toggleLockClass(el);
+            toggleLockClass(el, 'scroll-lock');
             break;
         default:
             keyAudio.currentTime = 0;
@@ -71,17 +82,24 @@ let customeElement = document.getElementById('c-t');
 let customToggle = false;
 
 
-function applyTheme(c1, c2, c3, c4) {
+function applyTheme(c1, c2, c3, c4, name) {
+    // remove f12 light-off if present when a theme is about to apply
+    if (keyboardElement[0].classList.contains('light-off')) {
+        keyboardElement[0].classList.remove('light-off');
+    }
     bodyStyles.setProperty('--keyboard-bg-color', c1);
     bodyStyles.setProperty('--key-bg-color', c2);
     bodyStyles.setProperty('--key-color', c3);
     bodyStyles.setProperty('--lock-on-color', c4);
+    // track ga events for themes
+    trackEvent(`Apply ${name} Theme`, 'Keyboard Themes', `${name}-button-click`, 2);
 }
 
 function toggleCustomThemeContent() {
     customToggle = !customToggle;
     if (customToggle) {
         customeElement.style.display = 'block';
+        trackEvent('Select Custom Theme', 'Custom Theme', 'custom-button-click', 4);
     } else {
         customeElement.style.display = 'none';
     }
@@ -93,19 +111,19 @@ function hideCustomTheme() {
 }
 
 defaultElement.addEventListener('click', function() {
-    applyTheme('#00c3b3', '#353535', '#f8f8f8', '#00AE94');
+    applyTheme('#00c3b3', '#353535', '#f8f8f8', '#00AE94', 'default');
     hideCustomTheme();
 });
 themeOneElement.addEventListener('click', function() {
-    applyTheme('#bbb', '#eee', '#808080', '#333');
+    applyTheme('#bbb', '#eee', '#808080', '#333', 'light');
     hideCustomTheme();
 });
 themeTwoElement.addEventListener('click', function() {
-    applyTheme('rgba(0, 0, 0, 0.8)', '#353535', '#f8f8f8', '#008996');
+    applyTheme('rgba(0, 0, 0, 0.9)', '#353535', '#f8f8f8', '#008996', 'dark');
     hideCustomTheme();
 });
 themeThreeElement.addEventListener('click', function() {
-    applyTheme('#D5BCA2', '#353535', '#f5f5f5', '#A46F5E');
+    applyTheme('#D5BCA2', '#353535', '#f5f5f5', '#A46F5E', 'rose-gold');
     hideCustomTheme();
 });
 
@@ -126,14 +144,22 @@ function toggleKeyPress(el) {
 
 // global window keydown event from real keyboard
 window.addEventListener('keydown', function(e) {
+    let codeName = e.code; // name of the key pressed
     let code = e.keyCode.toString();
     let keyElement = document.querySelector(`kbd[data-key="${code}"]`);
     toggleKey(code);
     toggleKeyPress(keyElement);
+    trackEvent(`Pressed ${codeName} key`, 'Real Keyboard', 'key-click', 2);
 });
 
 // info button
 info.addEventListener('click', function() {
     notes.classList.toggle('show-notes');
-    gtag('send', 'event', 'Information', 'Learn More', 'Info Button', 5);
+    trackEvent('Learn More', 'Information', 'button-click', 3);
+});
+
+// footer name link
+let footerName = document.getElementById('footer-name');
+footerName.addEventListener('click', function() {
+    trackEvent('Click-on-footer-name', 'View Portfolio', 'footer-name-link', 1);
 });
