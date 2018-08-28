@@ -66,6 +66,7 @@ function keyPress(e) {
         keyAttribute = e.target.parentNode.dataset.key;
     }
     toggleKey(keyAttribute);
+    trackEvent(`Pressed ${e.target.innerText} key`, 'Virtual Keyboard', `${e.target.innerText}-key-click`, 3);
 };
 
 // virtual keyboard key event
