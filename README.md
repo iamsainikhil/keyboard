@@ -1,20 +1,32 @@
 # About
+
 A virtual keyboard with cool effects and key functionalities.
 
-## Keyboard for *Windows*
+## Keyboard for _Windows_
+
 Developed with **HTML**, **CSS**, and **JS** without any dependencies.
 
 ## To-do list
-- *Keyboard for Macintosh*
-- *Custom music for any key*
-- *Custom key functions*
-- *Mobile Keyboard*
 
-## *Want to see my other fun project*
-### *Reaction Tester Game* 
+- _Keyboard for Macintosh_
+- _Custom music for any key_
+- _Custom key functions_
+- _Mobile Keyboard_
+
+## _Want to see my other fun project_
+
+### _Reaction Tester Game_
+
 > [Play](https://iamsainikhil.github.io/reaction-tester)
-#### *Check out the Source Code*
+
+#### _Check out the Source Code_
+
 > [View](https://github.com/iamsainikhil/reaction-tester)
 
-## *If you want to get updated of my projects*
+## _If you want to get updated of my projects_
+
 > [Follow Me](https://github.com/iamsainikhil)
+
+## Credits
+
+- Fesliyan Studios for the _button click_ sound effect audio -> https://www.fesliyanstudios.com/play-mp3/641
