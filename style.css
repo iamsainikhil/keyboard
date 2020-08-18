@@ -457,6 +457,7 @@ i.underscore {
 
 /* GitHub cornber ribbon */
 .github-corner .octo-arm {
+  margin-bottom: 1rem;
   animation: octocat-wave 1s ease-in-out;
 }
 .github-corner:hover .octo-arm {
@@ -477,6 +478,9 @@ i.underscore {
   }
 }
 @media (max-width: 500px) {
+  .github-corner {
+    margin-bottom: 2rem;
+  }
   .github-corner:hover .octo-arm {
     animation: none;
   }
