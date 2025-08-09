@@ -13,6 +13,7 @@
   width: 8px;
   height: 8px;
 }
+
 @media only screen and (min-width: 1280px) {
   ::-webkit-scrollbar {
     /* hide x-axis scrollbar track */
@@ -75,8 +76,8 @@ body {
   background-color: var(--key-bg-color);
   color: var(--key-color);
   font-family: var(--font);
-   font-optical-sizing: auto;
-  font-weight: 500;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-size: 12px;
   width: 46px;
   height: 40px;
@@ -200,6 +201,9 @@ i.underscore {
 .light-key {
   padding: 3px 5px;
   border-radius: 5px;
+  font-family: var(--font);
+  font-optical-sizing: auto;
+  font-weight: 400;
 }
 
 .off {
@@ -262,7 +266,7 @@ i.underscore {
 .color-themes {
   text-align: center;
   font-family: var(--font);
-   font-optical-sizing: auto;
+  font-optical-sizing: auto;
   font-weight: 500;
 }
 
@@ -278,8 +282,8 @@ i.underscore {
   color: #333;
   margin: 5px 15px;
   font-family: var(--font);
-   font-optical-sizing: auto;
-  font-weight: bold;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-size: 16px;
 }
 
@@ -315,15 +319,15 @@ i.underscore {
 
 .title {
   font-family: var(--font);
-   font-optical-sizing: auto;
-  font-weight: bold;
+  font-optical-sizing: auto;
+  font-weight: 500;
   text-align: center;
 }
 
 .sub-title {
   font-family: var(--font);
-  font-weight: 500;
-  letter-spacing: 1px;
+  font-optical-sizing: auto;
+  font-weight: 300;
 }
 
 /* notes */
@@ -339,8 +343,8 @@ i.underscore {
 
 .notes-wrapper b {
   font-family: var(--font);
-   font-optical-sizing: auto;
-  font-weight: bold;
+  font-optical-sizing: auto;
+  font-weight: 500;
 }
 
 .notes-wrapper .button {
@@ -352,7 +356,8 @@ i.underscore {
   max-width: 960px;
   margin: 0 auto;
   font-family: var(--font);
-  letter-spacing: 1px;
+  font-optical-sizing: auto;
+  font-weight: 300;
   display: none;
 }
 
@@ -380,13 +385,17 @@ i.underscore {
   margin: 2rem 0 0 0;
   padding: 0;
   font-family: var(--font);
-   font-optical-sizing: auto;
-  font-weight: bold;
+  font-optical-sizing: auto;
+  font-weight: 500;
 }
 
 .tech-love {
   text-align: center;
   margin-bottom: 0;
+}
+
+.footer-years {
+  font-weight: 300;
 }
 
 .footer a {
@@ -425,9 +434,11 @@ i.underscore {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -437,9 +448,11 @@ i.underscore {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -449,9 +462,11 @@ i.underscore {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -462,27 +477,34 @@ i.underscore {
   margin-bottom: 1rem;
   animation: octocat-wave 1s ease-in-out;
 }
+
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
 }
+
 @keyframes octocat-wave {
+
   0%,
   100% {
     transform: rotate(0);
   }
+
   20%,
   60% {
     transform: rotate(-25deg);
   }
+
   40%,
   80% {
     transform: rotate(10deg);
   }
 }
+
 @media (max-width: 500px) {
   .github-corner {
     margin-bottom: 2rem;
   }
+
   .github-corner:hover .octo-arm {
     animation: none;
   }
