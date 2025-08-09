@@ -1,22 +1,11 @@
 /* colors &fonts*/
 
-@font-face {
-  font-family: 'vr-b';
-  src: url('assets/fonts/VisbyRoundCF-Bold.woff');
-}
-
-@font-face {
-  font-family: 'vr-m';
-  src: url('assets/fonts/VisbyRoundCF-Medium.woff');
-}
-
 :root {
   --keyboard-bg-color: #00c3b3;
   --key-bg-color: #353535;
   --key-color: #fdf6ff;
   --lock-on-color: #00ae94;
-  --font-b: 'vr-b', sans-serif;
-  --font-m: 'vr-m', sans-serif;
+  --font: 'Rubik', sans-serif;
 }
 
 /* Track */
@@ -85,7 +74,9 @@ body {
 .key {
   background-color: var(--key-bg-color);
   color: var(--key-color);
-  font-family: var(--font-m);
+  font-family: var(--font);
+   font-optical-sizing: auto;
+  font-weight: 500;
   font-size: 12px;
   width: 46px;
   height: 40px;
@@ -270,7 +261,9 @@ i.underscore {
 
 .color-themes {
   text-align: center;
-  font-family: var(--font-m);
+  font-family: var(--font);
+   font-optical-sizing: auto;
+  font-weight: 500;
 }
 
 .button-wrapper .button {
@@ -284,7 +277,9 @@ i.underscore {
   border-radius: 25px;
   color: #333;
   margin: 5px 15px;
-  font-family: var(--font-b);
+  font-family: var(--font);
+   font-optical-sizing: auto;
+  font-weight: bold;
   font-size: 16px;
 }
 
@@ -319,12 +314,15 @@ i.underscore {
 }
 
 .title {
-  font-family: var(--font-b);
+  font-family: var(--font);
+   font-optical-sizing: auto;
+  font-weight: bold;
   text-align: center;
 }
 
 .sub-title {
-  font-family: var(--font-m);
+  font-family: var(--font);
+  font-weight: 500;
   letter-spacing: 1px;
 }
 
@@ -340,7 +338,9 @@ i.underscore {
 }
 
 .notes-wrapper b {
-  font-family: var(--font-b);
+  font-family: var(--font);
+   font-optical-sizing: auto;
+  font-weight: bold;
 }
 
 .notes-wrapper .button {
@@ -351,7 +351,7 @@ i.underscore {
 .notes {
   max-width: 960px;
   margin: 0 auto;
-  font-family: var(--font-m);
+  font-family: var(--font);
   letter-spacing: 1px;
   display: none;
 }
@@ -379,7 +379,9 @@ i.underscore {
   animation: gradientFill 8s ease infinite;
   margin: 2rem 0 0 0;
   padding: 0;
-  font-family: var(--font-b);
+  font-family: var(--font);
+   font-optical-sizing: auto;
+  font-weight: bold;
 }
 
 .tech-love {
